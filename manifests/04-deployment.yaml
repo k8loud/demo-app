@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+  labels:
+    app: demo-app
+    name: demo-app
+  namespace: demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: demo-app
+  template:
+    metadata:
+      labels:
+        name: demo-app
+    spec:
+      serviceAccountName: demo-app
+      containers:
+        - name: demo-app
+          image: k8loud/demo-app:0.0.1
+          imagePullPolicy: "IfNotPresent"
+#          imagePullPolicy: "Always"
+          resources:
+            limits:
+              cpu: 900m
+              memory: 900Mi
+            requests:
+              cpu: 900m
+              memory: 900Mi
+          ports:
+            - containerPort: 8080
