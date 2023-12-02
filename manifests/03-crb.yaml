@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: executor-crb
+  name: demo-app-crb
   labels:
     app: demo-app
     name: demo-app
