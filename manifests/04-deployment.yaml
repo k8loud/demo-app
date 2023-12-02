@@ -19,7 +19,7 @@ spec:
       serviceAccountName: demo-app
       containers:
         - name: demo-app
-          image: k8loud/demo-app:0.0.1
+          image: k8loud/demo-app:0.0.1-SNAPSHOT
           imagePullPolicy: "IfNotPresent"
 #          imagePullPolicy: "Always"
           resources:
