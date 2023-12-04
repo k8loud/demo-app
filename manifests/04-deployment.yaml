@@ -16,6 +16,8 @@ spec:
       labels:
         name: demo-app
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: kube-worker-0
       serviceAccountName: demo-app
       containers:
         - name: demo-app
